@@ -9,8 +9,8 @@
     <h1>PostgreSQL</h1>
     <h2>メモ</h2>
     <ul>
-        <li>データベース名を大文字にするときは""でくくる</li>
-        <li>pgAdminIIIであるテーブルのデータをバックアップするときは、plain、データ、列名インサートを使うとい</li>
+        <li>データベース名を大文字にするときは""でくくります。</li>
+        <li>pgAdminIIIであるテーブルのデータをバックアップするときは、plain、データ、列名インサートを指定します。</li>
     </ul>
     <h2>uuidの生成</h2>
     uuid_generate_v1()<br>
@@ -26,22 +26,20 @@
     <br>
     <h2>最大値を取得</h2>
     MAX()<br>
-    最大値を返す。<br>
     <br>
     <h2>NULL変換</h2>
-    COALESCE(arg1, arg2)<br>
-    arg1がNULLの場合、arg2を返す。<br>
-    arg1がNULLでなければarg1を返す。<br />
+    COALESCE(arg1, arg2)<br><br />
+    arg1がNULLの場合、arg2を返します。<br>
+    arg1がNULLでなければarg1を返します。<br />
     <br>
     <h2>データ抽出</h2>
-    LIMIT val1 OFFSET val2<br>
-    val2行目からval1行分データを取得する。<br />
+    LIMIT val1 OFFSET val2<br><br />
+    val2行目からval1行分データを取得します。<br />
     <br />
     <h2>コマンドプロンプトでSQLを実行</h2>
-    以下の手順を行う。
     <ol>
-        <li>sqlファイルのあるディレクトリでcmdを立ち上げる。</li>
-        <li>psql -f file.sql DBname UserPasswordを実行する。</li>
+        <li>sqlファイルのあるディレクトリでcmdを立ち上げます（Shift + 右クリック）。</li>
+        <li>psql -f file.sql DBname UserPasswordを実行します。</li>
     </ol>
     <a href="index.html">Top画面に戻る</a>
 </body>
