@@ -1,24 +1,19 @@
 body    {  
-    background-color: #000000;  
+    background-color: white;  
     color:springgreen;
 }  
 
-font{
-    color:green;
+h1 {
+	position: relative;
+	padding: 0 .4em .1em;
 }
-
-a {
-    color:springgreen;
-}
-
-h1{
-    color:springgreen;
-}
-
-h2, h3, code, pre{
-    color:springgreen;
-}
-
-ul, ol{
-    color:springgreen;
+h1::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	width: 100%;
+	height: 10px;
+	background-color: #b6f0fc;
 }
