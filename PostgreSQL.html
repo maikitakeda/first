@@ -8,17 +8,19 @@
 
     <h1>PostgreSQL</h1>
     <h2>メモ</h2>
-<ul>
-<li>データベース名を大文字にするときは""でくくる</li>
-<li>pgAdminIIIであるテーブルのデータをバックアップするときは、plain、データ、列名インサートを使うとい</li>
-</ul>
-<h2>uuidの生成</h2>
-uuid_generate_v1()<br><br>
-<h2>現在の値を取得</h2>
-CURRVAL('seq_name')<br><br>
-<h2>次の値を取得</h2>
-NEXTVAL('seq_name')<br>
-<br>
+    <ul>
+        <li>データベース名を大文字にするときは""でくくる</li>
+        <li>pgAdminIIIであるテーブルのデータをバックアップするときは、plain、データ、列名インサートを使うとい</li>
+    </ul>
+    <h2>uuidの生成</h2>
+    uuid_generate_v1()<br>
+    <br>
+    <h2>現在の値を取得</h2>
+    CURRVAL('seq_name')<br>
+    <br>
+    <h2>次の値を取得</h2>
+    NEXTVAL('seq_name')<br>
+    <br>
     <h2>現在時刻を取得</h2>
     now()<br>
     <br>
@@ -26,14 +28,17 @@ NEXTVAL('seq_name')<br>
     MAX()<br>
     最大値を返す。<br>
     <br>
+    <h2>NULL変換</h2>
     COALESCE(arg1, arg2)<br>
     arg1がNULLの場合、arg2を返す。<br>
+    arg1がNULLでなければarg1を返す。<br />
     <br>
+    <h2>データ抽出</h2>
     LIMIT val1 OFFSET val2<br>
-    val2行目からval1行分データを取得する。
+    val2行目からval1行分データを取得する。<br />
     <br />
-    <br />
-    DDLを実行するときは、以下の手順を行う。
+    <h2>コマンドプロンプトでSQLを実行</h2>
+    以下の手順を行う。
     <ol>
         <li>sqlファイルのあるディレクトリでcmdを立ち上げる。</li>
         <li>psql -f file.sql DBname UserPasswordを実行する。</li>
