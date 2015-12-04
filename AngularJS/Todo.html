@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app='testApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="testAppController as taskList">
+
+    {{taskList.tasks.length}}個中{{taskList.remaining()}}個のタスクが残っています<br /><br />
+    <a href="" ng-click="taskList.delete()">終えたタスクを消す</a>
+
+    <p ng-repeat="task in taskList.tasks">
+        <input type="checkbox" ng-model="task.done" />
+        {{task.text}}
+    </p>
+
+    <form ng-submit="taskList.add()">
+        <input type="text" ng-model="taskList.text">
+            <input class="btn-primary" type="submit" value="追加" />
+    </form>
+
+</body>
+</html>
+

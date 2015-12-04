@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html ng-app='App'>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Get Started</title>
+    <script src="angular.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-controller="AppController">
+    <input type="text" ng-model="query.name"/>
+    <ul>
+        <li ng-repeat="item in items|filter:query">{{item.name}} {{item.price}}</li>
+    </ul>
+</body>
+</html>

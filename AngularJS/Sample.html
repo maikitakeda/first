@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Client Side Validation</title>
+    <script src="Sample.js"></script>
+    <script src="Sample.css"></script>
+</head>
+<body>
+    <div ng-app='App'>
+        <h1>Add Some Control</h1>
+        <h2>Todo</h2>
+        <div ng-controller="todoController">
+            <span>残todo: {{remaining()}} / {{todos.length}}</span>
+            [ <a href="" ng-click="archive()">終わったのは消す</a> ]
+            <ul class="unstyled">
+                <li ng-repeat="todo in todos">
+                    <input type="checkbox" ng-model="todo.done">
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+            <form ng-submit="addTodo()">
+                <input type="text" ng-model="todoText" size="30" placeholder="新しいtodoを追加してくださいませ、ご主人様。">
+                <input class="btn-primary" type="submit" value="add">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
