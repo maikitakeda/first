@@ -1,6 +1,7 @@
-body    {  
+body    {
+
+	margin: 20px;
     background-color: white;  
-    color:springgreen;
 }  
 
 h1 {
@@ -16,4 +17,22 @@ h1::after {
 	width: 100%;
 	height: 10px;
 	background-color: #b6f0fc;
+}
+
+h2 {
+	position: relative;
+	padding: 0 .5em .5em 1.7em;
+	border-bottom: 1px solid #ccc;
+}
+h2::after {
+	position: absolute;
+	top: .4em;
+	left: .4em;
+	z-index: 2;
+	content: '';
+	width: 12px;
+	height: 12px;
+	background-color: #ccc;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
 }

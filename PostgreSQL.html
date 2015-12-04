@@ -6,23 +6,23 @@
 </head>
 <body>
 
-    <h2>PostgreSQL</h2>
-    <h3>メモ</h3>
+    <h1>PostgreSQL</h1>
+    <h2>メモ</h2>
 <ul>
 <li>データベース名を大文字にするときは""でくくる</li>
 <li>pgAdminIIIであるテーブルのデータをバックアップするときは、plain、データ、列名インサートを使うとい</li>
 </ul>
-<h3>uuidの生成</h3>
+<h2>uuidの生成</h2>
 uuid_generate_v1()<br><br>
-<h3>現在時を取得</h3>
+<h2>現在の値を取得</h2>
 CURRVAL('seq_name')<br><br>
-<h3></h3>
-NEXTVAL('seq_name')<br><br>
-
-    <h3>時間関係</h3>
-    <h3>now()</h3><br>
-    現在時刻の取得<br>
+<h2>次の値を取得</h2>
+NEXTVAL('seq_name')<br>
+<br>
+    <h2>現在時刻を取得</h2>
+    now()<br>
     <br>
+    <h2>最大値を取得</h2>
     MAX()<br>
     最大値を返す。<br>
     <br>
