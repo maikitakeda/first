@@ -2,5 +2,5 @@ onload = init;
 
 function init() {
 	var link = document.getElementById("TopPage");
-	link.href="Index.html";
+	link.href="http://maikitakeda.github.io/first/Index.html";
 }
