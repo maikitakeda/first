@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+    <title>Sample3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <h1>Sample3</h1>
+	このサンプルでは、ボタンがクリックされた時に、&lt;p>&lt;/p>要素の後に文字を追加します。<br>
+	ボタンをクリックするとadd()メソッドを呼び出し、&lt;p>&lt;/p>の後に&lt;div>&lt;/div>要素を加えます。<br>
+
+	<p id="sample">サンプル</p>
+	<input type="button" value="クリックすると追加されます" onClick="add()">
+
+
+	<script type="text/javascript">
+		function add() {
+	    	// e2要素を作成
+	    	var newElement = document.createElement('div');
+	    	newElement.setAttribute("id", "element");
+	    	newElement.innerText = 'div要素を作成しました';
+	    	// e2要素をbodyに追加
+	    	document.getElementById("sample").appendChild(newElement);
+		}
+	</script>
+	<br><br>
+	Sample2.html
+	<div class="source">
+	&lt;p id="before">黒から赤へ&lt;/p><br>
+	&lt;input type="button" value="クリックすると変わります" onClick="change()"><br>
+	<br>
+	&lt;script type="text/javascript"><br>
+		function add() {<br>
+	    	var newElement = document.createElement('div');<br>
+	    	newElement.setAttribute("id", "element");<br>
+	    	newElement.innerText = 'div要素を作成しました';<br>
+	    	document.getElementById("sample").appendChild(newElement);<br>
+		}<br>
+	&lt;/script>
+	</div>
+</body>
+</html>
+
+
