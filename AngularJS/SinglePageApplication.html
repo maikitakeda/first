@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../style.css">
     <script src="angular.js"></script>
     <script src="app.js"></script>
+    <script src="setting.js"></script>
 </head>
 <body ng-controller="testAppController as taskList">
 <h1>Single Page Application</h1>
@@ -21,7 +22,7 @@
         <input type="text" ng-model="taskList.text">
             <input class="btn-primary" type="submit" value="追加" />
     </form><br />
-    <a href="../index.html">Top画面に戻る</a>
+    <a href="../index.html" id="TopPage">Top画面に戻る</a>
 </body>
 </html>
 
