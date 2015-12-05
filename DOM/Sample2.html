@@ -1,33 +1,34 @@
 ﻿<html>
 <head>
-    <title>Sample1</title>
+    <title>Sample2</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <h1>Sample1</h1>
-	このサンプルでは、ボタンがクリックされた時に、&lt;p>&lt;/p>の要素を変更します。<br>
-	ボタンをクリックするとchange()メソッドを呼び出し、&lt;p>&lt;/p>の要素を変えます。<br>
+    <h1>Sample2</h1>
+	このサンプルでは、ボタンがクリックされた時に、&lt;p>&lt;/p>文字色を変更します。<br>
+	ボタンをクリックするとchange()メソッドを呼び出し、&lt;p>&lt;/p>の文字色を変えます。<br>
 
-	<p id="before">変わる前</p>
+	<p id="before">黒から赤へ</p>
 	<input type="button" value="クリックすると変わります" onClick="change()">
+
 
 	<script type="text/javascript">
 		function change() {
     		var p=document.getElementById("before");
-    		p.innerHTML="変わりました";
+    			p.style.color="red";
 		}
 	</script>
 	<br><br>
-	Sample1.html
+	Sample2.html
 	<div class="source">
-	&lt;p id="before">変わる前&lt;/p><br>
+	&lt;p id="before">黒から赤へ&lt;/p><br>
 	&lt;input type="button" value="クリックすると変わります" onClick="change()"><br>
 	<br>
 	&lt;script type="text/javascript"><br>
 		function change() {<br>
     		var p=document.getElementById("before");<br>
-    		p.innerHTML="変わりました";<br>
+    		p.style.color="red";<br>
 		}<br>
 	&lt;/script>
 	</div>
