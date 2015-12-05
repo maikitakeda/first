@@ -11,13 +11,26 @@
     例えば、あるセレクトリストの値を変えたら、それに伴って他のセレクトリストの値が変わるなどです。<br>
     <br>
     <a href="DOM/Index.html">DOM</a><br>
-    <a href="#copyguard">コピー制御</a>
+    <a href="#copyguard">コピー制御</a><br>
+    <a href="#init">読み込み時に処理を行う</a><br>
     <h2 id="copyguard">コピー制御</h2>
-    たとえば、Body要素のコピーを防ぐ場合は以下のように記述します。<br />
+    たとえば、Body要素のコピーを防ぐ場合は以下のように記述します。<br /><br>
     <div class="source">
             &lt;body oncopy="alert('コピーしないでね！！'); return false;">
     </div>
     <br />
+    <h2 id="init">読み込み時に処理を行う</h2>
+    例えば、読み込む際にリンク先を指定する際は以下のように記述します。<br>
+    読み込む際にinitメソッドを実行します。<br>
+    initメソッドでは、idがTopPageである要素を取得し、リンク先を指定しています。<br><br>
+    <div class="source">
+    	onload = init;<br><br>
+    	function init(){<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;var link = document.getElementById("TopPage");<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;link.href="http://maikitakeda.github.io/first/Index.html";<br>
+    	}
+    </div>
+    <br>
         <a href="index.html" id="TopPage">Top画面に戻る</a>
     </body>
 </html>
