@@ -11,8 +11,9 @@
 	SQLをマスターするためには、検索が非常に重要です。<br>
 	効率の良い検索を行えると、その分性能の向上につなげることができます。<br><br>
 	<a href="#SearchAll">全件検索</a><br>
-	<a href="#SearchColumn">取得する列を指定する</a>
-	<a href="#SearchCondition">取得する条件を指定する</a>
+	<a href="#SearchColumn">取得する列を指定する</a><br>
+	<a href="#SearchCondition">取得する条件を指定する</a><br>
+	<a href="#InnerJoin">内部結合して検索する</a>
 	<a href="#"></a>
 	<h2 id="SearchAll">全件検索</h2>
 	全件検索する場合は下記のように記述します。<br>
@@ -31,9 +32,19 @@
 	<br>
 	<h2 id="SearchCondition">取得する条件を指定する</h2>
 	取得する条件を指定する場合は下記のように記述します。<br>
-	下記の例では、顧客テーブルからidが1の顧客の情報を取得しています。<br>
+	下記の例では、顧客テーブルからcustomer_idが1の顧客の情報を取得しています。<br>
 	<div class="source">
-	SELECT * FROM customer WHERE id = 1;
+	SELECT * FROM customer WHERE customer_id = 1;
+	</div>
+	<h2 id="InnerJoin">内部結合して検索する</h2>
+	二つのテーブルを結合して、値を取得したい場合は下記のように記述します。<br>
+	下記の例では、顧客テーブルと購入履歴テーブルをcustomer_idで内部結合し、<br>
+	顧客名と金額を取得しています。<br>
+	「INNER JOIN 結合したいテーブル名 ON 結合条件」という書き方をします。<br>
+	また、テーブル名の後に名前をつけると、列名を指定する時にいちいち長いテーブル名を書く必要がなくなりますよ。<br>
+	<div class="source">
+	SELECT c.customer_name, b.sum FROM customer c INNER JOIN bought_history b ON<br>
+	c.customer_id = b.customer_id;
 	</div>
 	<br>
     <a href="index.html" id="TopPage">Top画面に戻る</a>
