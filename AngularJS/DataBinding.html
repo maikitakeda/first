@@ -9,12 +9,27 @@
       <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-<h1>Data Binding</h1>
+<h1>Data Binding</h1><br>
+	このサンプルでは入力値が画面に即座に反映されます。<br><br>
   <h2>Input your name</h2>
-      <input type="text" ng-model="name"> 
-      <p>{{"Hello " + name + "!"}}</p>
-  </body>
-      <br>
+      <input type="text" ng-model="name1"> 
+      <p>{{"Hello " + name1 + "!"}}</p>
+        <br>
+        DataBinding.html<br>
+        <div class="source">
+        	&lt;html><br>
+          	&lt;head><br>
+          	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Data Binding&lt;/title><br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="angular.js">&lt;/script><br>
+    		&lt;/head><br>
+    		&lt;body><br>
+      		&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2>Input your name&lt;/h2><br>
+      		&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" ng-model="name"><br> 
+      		&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>{{"Hello " + name + "!"}}&lt;/p><br>
+    		&lt;/body><br>
+    		&lt;/html><br>
+        </div>
         <a href="../Index.html" id="TopPage">Top画面に戻る</a>
+  </body>
 </html>
 

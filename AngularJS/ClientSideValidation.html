@@ -10,6 +10,9 @@
 </head>
 <body>
 <h1>Client Side Validation</h1>
+	このサンプルではクライアントサイドでの入力チェックを行います。<br>
+	半角数字、必須、文字数チェックを行っています。<br>
+	下のサンプルでは、angular.jsをhtmlとフォルダに配置しています。<br><br>
     <form novalidate name="myForm">
         <h2>電話番号</h2>
         <input type="number" name="name" ng-model="name" required ng-minlength="10" ng-maxlength="12">
@@ -18,6 +21,26 @@
         <p ng-show="myForm.name.$error.minlength">10文字未満です</p>
         <p ng-show="myForm.name.$error.maxlength">12文字を超えています</p>
     </form>
+    <br>
+    ClientSideValidation.html<br>
+    <div class="source">
+    	&lt;html><br>
+    	&lt;head><br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Client Side Validation&lt;/title><br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="angular.js">&lt;/script><br>
+    	&lt;/head><br>
+    	&lt;body><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;form novalidate name="myForm"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2>電話番号&lt;/h2><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="number" name="name" ng-model="name" required ng-minlength="10" ng-maxlength="12"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p ng-show="myForm.name.$error.number">半角数字を入力して下さい&lt;/p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p ng-show="myForm.name.$error.required">未入力です&lt;/p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p ng-show="myForm.name.$error.minlength">10文字未満です&lt;/p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p ng-show="myForm.name.$error.maxlength">12文字を超えています&lt;/p><br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form><br>
+    	&lt;/body>
+    	&lt;/html>
+    </div>
     <br>
         <a href="../index.html" id="TopPage">Top画面に戻る</a>
 </body>
