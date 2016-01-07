@@ -9,12 +9,43 @@
     <h1>Menu</h1>
     jQueryは軽量で高速なJavaScriptライブラリです。<br />
     簡単なサンプルを用意しているので試してみてください。<br><br />
-    <a href="DataBinding.html">双方向データバインディング</a>
-    <br />
-    <a href="ClientSideValidation.html">クライアントサイドバリデーション</a>
-    <br />
-    <a href="SinglePageApplication.html">Single Page Application</a>
-    <br />
+    <a href="#val">フォームの値を取得する</a><br>
+    <a href="#text">テキストの値を取得する</a><br />
+    <a href="#map">1個のクラスから複数の値を取得し、配列にする</a><br />
+    <a href="#highlight">条件に合致する値をハイライト表示する</a>
+    <h2 id="val">フォームの値を取得する</h2>
+    たとえば、classNameクラスのinput要素から値を取得する場合は以下のように記述します。<br /><br>
+    <div class="source">
+        $('.className').val();
+    </div>
+    <h2 id="text">テキストの値を取得する</h2>
+    たとえば、classNameクラスのtext要素から値を取得する場合は以下のように記述します。<br /><br>
+    <div class="source">
+        $('.className').text();
+    </div>
+    <h2 id="map">1個のクラスから複数の値を取得し、配列にする</h2>
+    たとえば、classNameクラスのtext要素を配列として取得する場合は以下のように記述します。<br />
+    map()でreturnする値を配列に加えます。<br /><br>
+    <div class="source">
+        var array = $('.className').map(function(){<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return  $(this).text();<br />
+        }).get();
+    </div>
+    <h2 id="highlight">条件に合致する値をハイライト表示する</h2>
+    たとえば、入力した条件がinput_phone_numberクラスに、検索結果がphone_numberクラスに属するときに<br />
+    入力条件が検索結果に合致する場合のみハイライト表示するには、以下のように記述します。<br /><br />
+    <div class="source">
+        var inputPhoneNumber = "";<br />
+        inputPhoneNumber = $('.input_phone_number').val();<br />
+        <br />
+        if (inputPhoneNumber != "") {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;$('.phone_number1').each(function (i, e) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($(e).text() == inputPhoneNumber) {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(e).css("background-color", "#00ffff");<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+        });
+    </div>
     <br>
         <a href="../Index.html" id="TopPage">Top画面に戻る</a>
 </body>
