@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>DOM</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../setting.js"></script>
+</head>
+<body>
+    <h1>LINQ(Language INtegrated Query)</h1>
+    <p>
+        C#で用いる強力なクエリです。<br>
+        これを使うとオブジェクトをラムダ式ですいすい操作できます。
+    </p>
+    <br />
+    <p>
+    <a href="ForEach">.ForEach()</a><br>
+    </p>
+    <h2 id="ForEach">.ForEach()</h2>
+    <p>ForEach() + ラムダ式でシンプルにリストを操作できます。<br />
+    下記の例では、顧客リストの年齢を全て20歳にしてしまう処理です。
+    </p>
+    <div class="source">
+        customers.ForEach(customer => customer.age = 20);
+    </div>
+    <br />
+        <a href="../Index.html" id="TopPage">Top画面に戻る</a>
+    </body>
+</html>
+
