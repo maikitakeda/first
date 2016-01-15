@@ -9,26 +9,30 @@
     Apacheは無料のWebサーバソフトウェアです。<br /><br />
     <a href="#rewrite">mod_rewrite</a><br />
     <h2 id="rewrite">mod_rewrite</h2>
-    このモジュールを導入することで、特定のリクエストに指定したurlを返すことが出来ます。<br />
-    Sorryページを表示する際に使います。<br />
-    LoadModuleでモジュールを読み込みます。<br />
-    &lt;IfModule>&lt;/IfModule>で指定したモジュールが読み込まれた場合にタグ内に記述した処理を実行します。
-    RewriteEngine Onでurlの書き換えを実行することを宣言します。<br />
-    RewriteRule a bでaをbに遷移させます。<br /><br />
+    <p>
+        このモジュールを導入することで、特定のリクエストに指定したurlを返すことが出来ます。<br />
+        Sorryページを表示する際に使います。<br />
+        まず、最初にLoadModuleでモジュールを読み込みます。
+    </p>
     <div class="source">
-        #sorryページを表示する場合は読み込む<br />
-        LoadModule rewrite_module modules/mod_rewrite.so<br />
-        <br />
-        #rewrite_moduleが読み込まれている場合は実行される<br />
+        LoadModule rewrite_module modules/mod_rewrite.so
+    </div>
+    <p>
+        &lt;IfModule>&lt;/IfModule>で指定したモジュールが読み込まれた場合にタグ内に記述した処理が実行されます。<br />
+        RewriteEngine Onでurlの書き換えを実行することを宣言します。<br />
+        RewriteCond で書き換えを行う条件を記述します。<br />
+        RewriteRule でどのurlをどのurlに遷移させるかを記述します。<br />
+        下記の例では、12時以降、全てのリクエストをsorryページに遷移させます。
+    </p>
+    <div class="source">
         &lt;IfModule rewrite_module><br />
-            #urlの書き換えを実行することを宣言します。<br />
             RewriteEngine On<br />
-            #全てのリクエストにsorryページを返します。<br />
+            RewriteCond %{TIME_HOUR}%{TIME_MIN} >1200<br />
             RewriteRule ^(.*)$ http://localhost:81/sorry.html [R,L]<br />
         &lt;/IfModule>
 
     </div><br>
-    <a href="index.html" id="TopPage">Top画面に戻る</a>
+    <a href="../index.html" id="TopPage">Top画面に戻る</a>
 
 
 </body>
