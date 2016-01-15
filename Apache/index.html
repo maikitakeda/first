@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <title>Apache</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <h1>Apache</h1>
+    Apacheは無料のWebサーバソフトウェアです。<br /><br />
+    <a href="#rewrite">mod_rewrite</a><br />
+    <h2 id="rewrite">mod_rewrite</h2>
+    このモジュールを導入することで、特定のリクエストに指定したurlを返すことが出来ます。<br />
+    Sorryページを表示する際に使います。<br />
+    LoadModuleでモジュールを読み込みます。<br />
+    &lt;IfModule>&lt;/IfModule>で指定したモジュールが読み込まれた場合にタグ内に記述した処理を実行します。
+    RewriteEngine Onでurlの書き換えを実行することを宣言します。<br />
+    RewriteRule a bでaをbに遷移させます。<br /><br />
+    <div class="source">
+        #sorryページを表示する場合は読み込む<br />
+        LoadModule rewrite_module modules/mod_rewrite.so<br />
+        <br />
+        #rewrite_moduleが読み込まれている場合は実行される<br />
+        &lt;IfModule rewrite_module><br />
+            #urlの書き換えを実行することを宣言します。<br />
+            RewriteEngine On<br />
+            #全てのリクエストにsorryページを返します。<br />
+            RewriteRule ^(.*)$ http://localhost:81/sorry.html [R,L]<br />
+        &lt;/IfModule>
+
+    </div><br>
+    <a href="index.html" id="TopPage">Top画面に戻る</a>
+
+
+</body>
+</html>
+
+
